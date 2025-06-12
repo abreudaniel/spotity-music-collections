@@ -1,0 +1,161 @@
+.frame {
+    justify-content: center;
+    align-items: center;
+    padding-top: 122px;
+}
+
+.dashboardhead {
+    width: 1200px;
+    height: 796px;
+    padding-top: 52px;
+    background: #090707;
+}
+
+.container {
+    display: flex;
+    gap: 16px;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    width: 369px;
+    height: 20px;
+
+    margin: 0;
+    /*    padding: 17px;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardtext {
+    font-family: Rubik, serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.01em;
+    vertical-align: middle;
+    font-variant-numeric-figure: lining-nums;
+    font-variant-numeric-spacing: proportional-nums;
+    color: #FFFFFF;
+}
+
+.framebutton {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding: 10px;
+}
+
+.cardsection {
+    display: flex;
+    width: 133px;
+    height: 42px;
+    gap: 10px;
+    border-radius: 24px;
+    padding-right: 40px;
+    padding-left: 40px;
+    background: #57B660;
+}
+
+.cardtextbutton {
+    width: 53px;
+    height: 20px;
+    padding-top: 7px;
+    font-family: Rubik, serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.01em;
+    text-align: center;
+    vertical-align: middle;
+    color: #181414;
+}
+
+
+.ajustify {
+    margin: 0;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.dashboardimagem {
+    width: 164px;
+    height: 49.0616340637207px;
+    padding-top: 31.04px;
+    padding-left: 29px;
+
+}
+
+.dashboardcontainer {
+    width: 1200px;
+    height: 796px;
+    padding-top: 52px;
+    background: #090707;
+}
+
+.dashboardcard {
+    width: 250px;
+    height: 796px;
+    background: #000000;
+}
+
+
+.dashboardoption {
+    display: flex;
+    flex-direction: column;
+    width: 139px;
+    height: 173.12704467773438px;
+    gap: 24px;
+    padding-top: 26.03px;
+    padding-left: 33px;
+}
+
+.dashboardhome {
+    width: 98px;
+    height: 26.032705307006836px;
+
+}
+
+.dashboardhomeimg {
+    width: 24px;
+    height: 26.032705307006836px;
+
+}
+
+.dashboardhometext {
+    display: flex;
+    width: 51px;
+    height: 25.03144645690918px;
+    left: 47px;
+    font-family: DM Sans, serif;
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 100%;
+    letter-spacing: -6%;
+    color: var(--Grey-tom-color-grey-000, #FFFFFF);
+}
+
+.dashboardinstallapp{
+    width: 163px;
+    height: 25.04779052734375px;
+    padding-top: 439.95px;
+}
+
+/* Espaçamentos responsivos */
+@media (max-width: 768px) {
+    .container > * {
+        margin-bottom: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container > * {
+        margin-bottom: 12px;
+    }
+}
