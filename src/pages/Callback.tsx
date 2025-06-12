@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
+import { AuthService } from '../service/auth';
 
 const Callback = () => {
     const [searchParams] = useSearchParams();
@@ -42,6 +43,8 @@ const Callback = () => {
 
             // Armazena o token de acesso
             localStorage.setItem('access_token', data.access_token);
+
+            AuthService.setToken(data.access_token);
 
             console.log('Autenticação bem-sucedida, redirecionando...');
 

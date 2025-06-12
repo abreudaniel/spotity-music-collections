@@ -114,6 +114,7 @@
     gap: 24px;
     padding-top: 26.03px;
     padding-left: 33px;
+    cursor: pointer;
 }
 
 .dashboardhome {
@@ -146,6 +147,305 @@
     height: 25.04779052734375px;
     padding-top: 439.95px;
 }
+
+.mainTable {
+    width: 100%;
+    height: 100vh;
+    border-collapse: collapse;
+}
+
+.menuCell {
+    width: 240px; /* Largura fixa para o menu */
+    vertical-align: top;
+    border-right: 1px solid #282828;
+    padding: 0;
+}
+
+.contentCell {
+    vertical-align: top;
+    padding: 0;
+}
+
+.profileContainer {
+    max-width: 800px;
+    margin: 0 auto;
+    color: #fff;
+}
+
+.profileHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 2rem;
+}
+
+.profileImage {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #1DB954;
+    margin-bottom: 1rem;
+}
+
+.profileName {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+    color: #fff;
+}
+
+.profileInfo {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1rem 2rem;
+}
+
+.infoItem {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.infoItem:last-child {
+    border-bottom: none;
+}
+
+.infoLabel {
+    color: #b3b3b3;
+    font-weight: 500;
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    color: #1DB954;
+    padding: 2rem;
+}
+
+.error {
+    color: #ff4444;
+    text-align: center;
+    padding: 1rem;
+    background: rgba(255, 68, 68, 0.1);
+    border-radius: 8px;
+    margin: 2rem;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .menuCell {
+        width: 200px;
+    }
+
+    .profileInfo {
+        margin: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .mainTable {
+        display: block;
+    }
+
+    .menuCell, .contentCell {
+        display: block;
+        width: 100%;
+    }
+
+    .menuCell {
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid #282828;
+    }
+}
+
+
+.playlistHeader {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding-top: 2rem;
+}
+
+.playlistCard {
+    border-radius: 8px;
+    padding: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.playlistContent {
+    display: flex;
+    align-items: flex-start;
+}
+
+.imageWrapperButton {
+    width: 100%;
+    cursor: pointer;
+}
+
+
+.imageWrapperText {
+    flex-shrink: 0;
+    pointer-events: none;
+}
+
+
+.imageWrapper {
+    flex-shrink: 0;
+    width: 90px;
+}
+
+.playlistImage {
+    width: 72px;
+    height: 72px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.playlistInfo {
+    flex: 1;
+    min-width: 0;
+    padding-top: 15px;
+}
+
+.playlistInfo h3 {
+    color: #fff;
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.ownerName {
+    color: #b3b3b3;
+    font-size: 0.9rem;
+    margin: 0.25rem 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/*width: 950;
+height: 122;
+padding: 32px;*/
+
+
+/*.playlistsContainer {
+    padding: 2rem;
+    color: #fff;
+}
+
+.playlistsHeader {
+    margin-bottom: 2rem;
+}
+
+.playlistsHeader h1 {
+    font-size: 2rem;
+    margin: 0;
+    color: #fff;
+}
+
+.playlistsHeader h2 {
+    font-size: 1rem;
+    color: #b3b3b3;
+    margin: 0.5rem 0;
+}
+
+!*.createPlaylistButton {
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.createPlaylistButton:hover {
+    opacity: 0.8;
+}*!
+
+.playlistsGridTd {
+    display: grid;
+}
+
+.playlistsGrid {
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem 0;
+}
+
+.playlistCard {
+    border-radius: 8px;
+    padding: 1rem;
+
+}
+
+!*.playlistCard:hover {
+    background: rgba(255, 255, 255, 0.2);
+}*!
+
+.playlistImage {
+    width: 72px;
+    height: 72px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+}
+
+.playlistInfo h3 {
+    color: #fff;
+    margin: 0.5rem 0;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 116px;
+    height: 20px;
+}
+
+.playlistInfo p {
+    color: #b3b3b3;
+    font-size: 0.9rem;
+    margin: 0.25rem 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 69px;
+    height: 20px;
+}*/
+
+.non-clickable-image {
+    pointer-events: none;
+}
+
+
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    color: #1DB954;
+}
+
+.error {
+    color: #ff4444;
+    text-align: center;
+    padding: 1rem;
+    background: rgba(255, 68, 68, 0.1);
+    border-radius: 8px;
+    margin: 2rem;
+}
+
+
 
 /* Espaçamentos responsivos */
 @media (max-width: 768px) {
