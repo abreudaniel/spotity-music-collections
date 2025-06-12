@@ -46,14 +46,6 @@ const preloadImages = () => {
 
 const Menu = () => {
 
-    /*const navigate = useNavigate();
-    const [activeItem, setActiveItem] = useState<string>('home');
-
-    const handleNavigation = (path: string, menuItem: string) => {
-        setActiveItem(menuItem);
-        navigate(path);
-    };*/
-
     const navigate = useNavigate();
     const location = useLocation();
     const [activeItem, setActiveItem] = useState(() => {
@@ -84,26 +76,6 @@ const Menu = () => {
         navigate(path);
     };
 
-
-
-
-    /*const navigate = useNavigate();*/
-
-  /*  const handleDashboard = () => {
-        navigate('/dashboard');
-    }
-    const handleArtista = () => {
-        navigate('/artista');
-    }
-
-    const handlePlaylist = () => {
-        navigate('/playlist');
-    }
-
-    const handlePerfil = () => {
-        navigate('/perfil');
-    }*/
-
     return (
                 <nav className={styles.dashboardcard}>
                     <div>
@@ -132,34 +104,6 @@ const Menu = () => {
                         <img src={installAppSpotify} alt="Descrição da imagem"/>
                     </div>
                 </nav>
-
-
-
-                /*<div className={styles.dashboardcard}>
-                    <div>
-                        <img src={logoSpotify} alt="Descrição da imagem" className={styles.dashboardimagem}/>
-                    </div>
-                    <div className={styles.dashboardoption}>
-                        <div className={styles.dashboardhome}>
-                            <img src={activeItem === 'home' ? homeSpotifyOn : homeSpotify}
-                                 alt="Descrição da imagem"
-                                 onClick={() => handleNavigation('/dashboard', 'home')}
-                            />
-                        </div>
-                        <div className={styles.dashboardhome}>
-                            <img src={artistaSpotify} alt="Descrição da imagem" onClick={handleArtista}/>
-                        </div>
-                        <div className={styles.dashboardhome}>
-                            <img src={activeItem === 'play' ? playlistSpotifyOn : playlistSpotify} alt="Descrição da imagem" onClick={() => handleNavigation('/playlist', 'play')}/>
-                        </div>
-                        <div className={styles.dashboardhome}>
-                            <img src={perfilSpotify} alt="Descrição da imagem" onClick={handlePerfil}/>
-                        </div>
-                        <div className={styles.dashboardinstallapp}>
-                            <img src={installAppSpotify} alt="Descrição da imagem"/>
-                        </div>
-                    </div>
-                </div>*/
     );
 
 }
