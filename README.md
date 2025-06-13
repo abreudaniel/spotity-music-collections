@@ -1,46 +1,92 @@
-# Getting Started with Create React App
+# Requisitos
+## Requisitos obrigatórios
+- [X] Seguimentação de commits
+- [X] Lint
+- [X] Autenticação via Spotify
+- [X] Listar artistas
+- [X] Listar albuns de um artista
+- [X] Utilizar paginação (scroll infinito ou não)
+- [X] Funcionamento offline
+- [X] Testes unitários
+- [X] Deploy da aplicação
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Bônus
+- [ ] Testes E2E
+- [ ] Integração com Sentry
+- [ ] CI/CD
+- [ ] Responsividade (celular e tablet)
+- [X] Qualidade de código (Sonarqube)
+- [ ] PWA
 
-## Available Scripts
 
-In the project directory, you can run:
+# Spotify Music Collections
 
-### `npm start`
+Uma aplicação web para explorar coleções de músicas do Spotify, permitindo visualizar artistas e seus álbuns.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 🚀 Tecnologias Utilizadas
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- **React** (v19.1.0) - Framework frontend
+- **TypeScript** (v4.9.5) - Linguagem de programação
+- **TailwindCSS** (v4.1.10) - Framework CSS para estilização
+- **React Router DOM** (v6.30.1) - Roteamento
+- **Axios** (v1.9.0) - Cliente HTTP
+- **Jest** & **Testing Library** - Framework de testes
 
-### `npm test`
+## 📋 Pré-requisitos
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js (versão LTS recomendada)
+- NPM
+- Conta no Spotify Developer Portal
 
-### `npm run build`
+## 🔧 Instalação
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/abreudaniel/spotify-music-collections.git
+   cd spotify-music-collections
+   ```
+2. Instale as dependências:
+   ```bash
+    bash npm install
+   ```
+3. Configure as variáveis de ambiente:
+   Crie um arquivo `.env` na raiz do projeto com as seguintes variáveis:
+   ```bash
+    REACT_APP_SPOTIFY_CLIENT_ID=seu_client_id_aqui 
+    REACT_APP_SPOTIFY_REDIRECT_URI=[http://localhost:3000/callback](http://localhost:3000/callback)
+   ```
+4. Inicie o servidor de desenvolvimento:
+   ```bash
+    bash npm start
+   ```
+## 🏗️ Arquitetura
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+O projeto segue uma arquitetura moderna e escalável:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Padrão de Arquitetura**: Clean Architecture
+- **Gerenciamento de Estado**: Context API do React
+- **Componentes**: Abordagem modular e reutilizável
+- **Estilização**: Utility-first com TailwindCSS
+- **Testes**: Testes unitários com Jest e Testing Library
 
-### `npm run eject`
+## 🧪 Testes
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Para executar os testes:
+   ```bash
+    bash npm test
+   ```   
+Para verificar a cobertura de testes:
+   ```bash
+    bash npm test -- --coverage
+   ```   
+## 📦 Build
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Para gerar uma build de produção:
+   ```bash
+    bash npm run build
+   ```  
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## 🛠️ Ferramentas de Qualidade
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **ESLint** - Análise estática de código
+- **Sonarqube** - Análise de qualidade de código
