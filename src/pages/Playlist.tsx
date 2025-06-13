@@ -5,6 +5,8 @@ import api from '../service/api';
 import { AuthService } from '../service/auth';
 import buttonCreateList from "../assets/button_create.png";
 import textCreateList from "../assets/myPlayList.png";
+import NewPlaylistModal from './NewPlaylistModal';
+
 
 
 interface Playlist {
@@ -35,6 +37,8 @@ const Playlist = () => {
     const [playlists, setPlaylists] = useState<Playlist[]>([]);
     const [error, setError] = useState('');
     const [isLoading, setIsLoading] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
 
     useEffect(() => {
         const fetchPlayList = async () => {
@@ -77,7 +81,26 @@ const Playlist = () => {
         fetchPlayList();
     }, []);
 
-  return (
+    const handleCreatePlaylist = async (name: string, description: string) => {
+        try {
+            const userId = localStorage.getItem('userId');
+            const response = await api.post(`/users/${userId}/playlists`, {
+                name,
+                description,
+                public: true
+            });
+
+            // Atualizar a lista de playlists
+            setIsModalOpen(false);
+            // Adicione aqui a lógica para atualizar a lista de playlists
+
+        } catch (error) {
+            console.error('Erro ao criar playlist:', error);
+        }
+    };
+
+
+    return (
       <div className={styles.dashboardhead}>
           <table className={styles.mainTable}>
               <tbody>
@@ -100,7 +123,7 @@ const Playlist = () => {
                                               <img src={textCreateList} alt="" />
                                           </div>
                                           <div className={styles.imageWrapperButton}>
-                                              <img src={buttonCreateList} alt="Descrição da imagem" />
+                                              <img src={buttonCreateList} alt="Descrição da imagem" onClick={() => setIsModalOpen(true)} />
                                           </div>
                                       </div>
                                   </div>
@@ -128,6 +151,13 @@ const Playlist = () => {
                               ))}
                           </div>
                       ) : null}
+
+                      <NewPlaylistModal
+                          isOpen={isModalOpen}
+                          onClose={() => setIsModalOpen(false)}
+                          onCreatePlaylist={handleCreatePlaylist}
+                      />
+
                   </td>
               </tr>
               </tbody>

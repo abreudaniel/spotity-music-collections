@@ -7,7 +7,6 @@
 .dashboardhead {
     width: 1200px;
     height: 796px;
-/*    padding-top: 52px;*/
     background: #090707;
 }
 
@@ -197,7 +196,6 @@
 }
 
 .profileInfo {
-    background: rgba(255, 255, 255, 0.1);
     border-radius: 12px;
     padding: 1.5rem;
     margin: 1rem 2rem;
@@ -205,9 +203,12 @@
 
 .infoItem {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding: 0.75rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.infoItem img{
+  cursor: pointer;
 }
 
 .infoItem:last-child {
@@ -334,94 +335,165 @@
     text-overflow: ellipsis;
 }
 
-
-/*width: 950;
-height: 122;
-padding: 32px;*/
-
-
-/*.playlistsContainer {
-    padding: 2rem;
-    color: #fff;
-}
-
-.playlistsHeader {
-    margin-bottom: 2rem;
-}
-
-.playlistsHeader h1 {
-    font-size: 2rem;
-    margin: 0;
-    color: #fff;
-}
-
-.playlistsHeader h2 {
-    font-size: 1rem;
-    color: #b3b3b3;
-    margin: 0.5rem 0;
-}
-
-!*.createPlaylistButton {
-    cursor: pointer;
-    transition: opacity 0.2s ease;
-}
-
-.createPlaylistButton:hover {
-    opacity: 0.8;
-}*!
-
-.playlistsGridTd {
-    display: grid;
-}
-
-.playlistsGrid {
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
     display: flex;
-    flex-direction: column;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 1.5rem;
-    padding: 1rem 0;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.2s ease;
 }
 
-.playlistCard {
-    border-radius: 8px;
-    padding: 1rem;
-
+.modalContent {
+    background-color: #303030;
+    padding-top: 24px;
+    padding-right: 16px;
+    padding-bottom: 24px;
+    padding-left: 16px;
+    border-radius: 32px;
+    width: 600px;
+    height: 346px;
+    max-width: 600px;
+    animation: slideUp 0.3s ease;
 }
 
-!*.playlistCard:hover {
-    background: rgba(255, 255, 255, 0.2);
-}*!
 
-.playlistImage {
-    width: 72px;
-    height: 72px;
-    aspect-ratio: 1;
-    object-fit: cover;
-    border-radius: 4px;
-    margin-bottom: 0.5rem;
-}
-
-.playlistInfo h3 {
+.modalContent h2 {
     color: #fff;
-    margin: 0.5rem 0;
-    font-size: 14px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    width: 116px;
-    height: 20px;
+    margin: 0 0 24px 0;
+    font-size: 24px;
 }
 
-.playlistInfo p {
-    color: #b3b3b3;
-    font-size: 0.9rem;
-    margin: 0.25rem 0;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    width: 69px;
+.formGroup {
+    margin-bottom: 16px;
+    width: 568;
+    height: 208;
+    gap: 24px;
+    padding-top: 64px;
+    padding-right: 32px;
+    padding-bottom: 64px;
+    padding-left: 32px;
+}
+
+.formGroup label {
+    display: flex;
+    color: #fff;
+    margin-bottom: 8px;
+    font-size: 14px;
+    justify-content: center;
     height: 20px;
-}*/
+    text-align: center;
+}
+
+.formGroup input {
+    width: 504px;
+    height: 36px;
+    gap: 16px;
+    padding: 8px;
+    border-bottom-width: 1px;
+    display: flex;
+    border: 1px solid transparent;
+    background-color: #303030;
+    color: #fff;
+    font-size: 14px;
+    justify-content: center;
+    text-align: center;
+    border-bottom: 1px solid #FFFFFF33
+}
+
+.formGroup input::placeholder {
+    text-align: center;
+    -webkit-text-align: center;
+    -moz-text-align: center;
+    -ms-text-align: center;
+
+}
+
+.formGroup input:focus {
+    border-color: #303030;
+    outline: none;
+    text-align: center;
+    border-bottom: 1px solid #FFFFFF33
+}
+
+
+
+.modalActions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.modalActionsX {
+    display: flex;
+    justify-content: right;
+    gap: 12px;
+    margin-top: 24px;
+    width: 568;
+    height: 32;
+}
+.createButton {
+    padding: 12px 24px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+
+.newPlaylistButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: #1db954;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.newPlaylistButton:hover {
+    background: #1ed760;
+    transform: scale(1.02);
+}
+
+.plusIcon {
+    font-size: 20px;
+    line-height: 1;
+}
+
+.playlistHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 .non-clickable-image {
     pointer-events: none;
@@ -444,7 +516,6 @@ padding: 32px;*/
     border-radius: 8px;
     margin: 2rem;
 }
-
 
 
 /* Espaçamentos responsivos */
