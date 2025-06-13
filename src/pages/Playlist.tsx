@@ -54,21 +54,13 @@ const Playlist = () => {
                     offset: 0   // para paginação
                 };
 
-
-                console.log('Iniciou Playlist');
-                console.log("UserId: ", localStorage.getItem('userId'));
-
                 if(localStorage.getItem('userId') == null){
                     const newUserId = await api.get('/me');
                     localStorage.setItem('userId', newUserId.data.id);
                 }
 
                 const user_id = localStorage.getItem('userId');
-
                 const userId = String(user_id);
-
-
-                console.log("Denovo UserId: ", userId);
 
                 const response = await api.get('/users/'+userId+'/playlists');
                 setPlaylists(response.data.items);

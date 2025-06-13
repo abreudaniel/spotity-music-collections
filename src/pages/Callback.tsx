@@ -9,10 +9,6 @@ const Callback = () => {
     const handleSpotifyCallback = async (code: string,state:string) => {
         try {
 
-            console.log('Iniciando login...');
-            console.log('URL da API:', process.env.REACT_APP_API_URL);
-
-
             const apiUrl= process.env.REACT_APP_API_URL;
 
             // Criando query params
@@ -21,16 +17,9 @@ const Callback = () => {
                 state: state
             }).toString();
 
-            // Adicione logs para debug
-            console.log('URL completa:', `${apiUrl}/api/auth/callback?${queryParams}`);
-
-
             const response = await fetch(`${apiUrl}/api/auth/callback?${queryParams}`, {
                 method: 'GET'
             });
-
-            // Adicione mais logs para debug
-            console.log('Status da resposta:', response.status);
 
             if (!response.ok) {
                 const errorData = await response.text();
@@ -39,16 +28,13 @@ const Callback = () => {
             }
 
             const data = await response.json();
-            console.log('Dados recebidos (sem token):', { ...data, access_token: '[REDACTED]' });
 
             // Armazena o token de acesso
             localStorage.setItem('access_token', data.access_token);
 
             AuthService.setToken(data.access_token);
 
-            console.log('Autenticação bem-sucedida, redirecionando...');
-
-            // Redireciona para a página principal após o login
+           // Redireciona para a página principal após o login
             navigate('/dashboard');
         } catch (error) {
             console.error('Erro durante autenticação:', error);

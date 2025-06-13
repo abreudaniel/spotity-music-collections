@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import React, {useEffect, useState} from 'react';
+import {useParams} from 'react-router-dom';
 import {Album, Artist, ArtistService} from '../service/ArtistaService';
 import styles from '../spotify.module.css';
 import Menu from "../pages/Menu";
@@ -12,12 +12,11 @@ const ArtistAlbums = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);*/
 
-    const { artistId } = useParams<{ artistId: string }>();
+    const {artistId} = useParams<{ artistId: string }>();
     const [albums, setAlbums] = useState<Album[]>([]);
     const [artist, setArtist] = useState<Artist | null>(null);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
-
 
 
     useEffect(() => {
@@ -26,11 +25,11 @@ const ArtistAlbums = () => {
 
             try {
                 setIsLoading(true);
-               /* const response = await ArtistService.getArtistAlbums(artistId, ['album'],5);
-               */
+                /* const response = await ArtistService.getArtistAlbums(artistId, ['album'],5);
+                */
                 const [artistData, albumsData] = await Promise.all([
                     ArtistService.getArtist(artistId),
-                    ArtistService.getArtistAlbums(artistId, ['album'],5)
+                    ArtistService.getArtistAlbums(artistId, ['album'], 5)
                 ]);
 
 
@@ -58,10 +57,10 @@ const ArtistAlbums = () => {
                 <tbody>
                 <tr>
                     <td className={styles.menuCell}>
-                        <Menu />
+                        <Menu/>
                     </td>
                     <td className={styles.contentCell}>
-                     {/*   <div className={styles.filterButtons}>
+                        {/*   <div className={styles.filterButtons}>
                             <button
                                 onClick={() => setAlbumType(['album'])}
                                 className={albumType.includes('album') ? styles.active : ''}
@@ -89,52 +88,60 @@ const ArtistAlbums = () => {
                         {artist && (
 
 
-                            <div className={styles.artistBack}>
-                                <div className={styles.artistTitleImg}>
-                                    <img src={buttonarrow} alt="Descrição da imagem" onClick={handleBack} />
+                            <div className={styles.artistArrow}>
+                                <div className={styles.artistHeader}>
+                                    <img src={buttonarrow} alt="Descrição da imagem"
+                                         onClick={handleBack}/>
                                     <h5 className={styles.artistName}>{artist.name}</h5>
                                 </div>
+                                <div className={styles.artistBackAlbum}>
+                                    {artist.images?.[0]?.url && (
+                                        <img
+                                            src={artist.images[0].url}
+                                            alt={artist.name}
+                                            className={styles.artistHeaderImage}
+                                        />
+                                    )}
+                                </div>
 
-                            {artist.images?.[0]?.url && (
-                                <img
-                                    src={artist.images[0].url}
-                                    alt={artist.name}
-                                    className={styles.artistHeaderImage}
-                                />
-                            )}
 
-
-
-                        </div>
+                            </div>
                         )}
 
                         <div className={styles.albumsGrid}>
                             {albums.map((album) => (
 
                                 <div key={album.id} className={styles.albumCard}>
-                                    <table>
-                                        <tbody >
+                                    {/*<table>
+                                        <tbody>
                                         <tr>
-                                            <td>
-                                    {album.images[0] && (
-                                        <img
-                                            src={album.images[0].url}
-                                            alt={album.name}
-                                            className={styles.albumCover}
-                                        />
-                                    )}
-                                        </td>
-                                        <td>
+                                            <td>*/}
+                                    <div>
+                                        {album.images[0] && (
+                                            <img
+                                                src={album.images[0].url}
+                                                alt={album.name}
+                                            />
+                                        )}
+                                    </div>
                                     <div className={styles.albumInfo}>
                                         <h3>{album.name}</h3>
-                                        <h4 className={styles.releaseDate}>
+                                        <h4>
                                             {new Date(album.release_date).getDay()}/{new Date(album.release_date).getMonth()}/{new Date(album.release_date).getFullYear()}
                                         </h4>
                                     </div>
-                                        </td>
+                                    {/* </td>
+                                            <td>*/}
+                                    {/*<div className={styles.albumInfo}>
+                                                    <h3>{album.name}</h3>
+                                                    <h4 className={styles.releaseDate}>
+                                                        {new Date(album.release_date).getDay()}/{new Date(album.release_date).getMonth()}/{new Date(album.release_date).getFullYear()}
+                                                    </h4>
+                                                </div>*/}
+                                    {/*        </td>
                                         </tr>
                                         </tbody>
-                                    </table>
+                                    </table>*/}
                                 </div>
 
                             ))}
