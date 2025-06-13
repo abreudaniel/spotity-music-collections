@@ -137,7 +137,7 @@
     font-weight: 700;
     font-size: 19px;
     line-height: 100%;
-    letter-spacing: -6%;
+    letter-spacing: -0.06em;;
     color: var(--Grey-tom-color-grey-000, #FFFFFF);
 }
 
@@ -516,6 +516,197 @@
     border-radius: 8px;
     margin: 2rem;
 }
+
+.artistTitleImg {
+    width: 950px;
+    height: 50px;
+    justify-content: space-between;
+    padding: 32px;
+}
+
+.artistBack img{
+    width: 64px;
+    height: 64px;
+    border-radius: 64px;
+
+}
+
+.artistTitleImg h5{
+    width: 950px;
+    height: 122px;
+    gap: 8px;
+    padding-bottom: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+
+}
+
+.artistTitle {
+    width: 950px;
+    height: 122px;
+    gap: 8px;
+    padding-bottom: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.artistsGrid{
+/*    width: 950px;
+    height: 304px;
+    gap: 16px;
+    padding-right: 32px;
+    padding-left: 32px;*/
+    display: flex;
+    width: 886px;
+    height: 304px;
+    gap: 16px;
+    flex-direction: column;
+
+/*    width: 950;
+    height: 304;
+    gap: 16px;*/
+    padding-right: 32px;
+    padding-left: 32px;
+
+
+}
+
+.artistCard img {
+    cursor: pointer;
+    width: 64px;
+    height: 64px;
+    border-radius: 64px;
+    animation-timing-function: ease-in;
+    animation-duration: 300ms;
+}
+
+.artistCard h3 {
+    color: #fff;
+    margin: 0 0 0.5rem 15px;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    height: 20px;
+
+    font-family: Rubik,serif;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.01em;
+    vertical-align: middle;
+    font-variant-numeric-figure: lining-nums;
+    font-variant-numeric-spacing: proportional-nums;
+
+
+}
+/*
+.artistImage {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.artistImage:hover {
+    transform: scale(1.05);
+    opacity: 0.8;
+}
+
+.artistsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.artistCard {
+    text-align: center;
+    padding: 20px;
+    background: #282828;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.artistCard:hover {
+    background: #333;
+}*/
+
+.albumsGrid {
+    display: flex;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    flex-direction: column;
+}
+
+.albumCard {
+
+    border-radius: 8px;
+
+    transition: all 0.3s ease;
+}
+
+
+.albumCard img {
+    width: 72px;
+    height: 72px;
+    border-radius: 8px;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+.albumCard h3, .albumCard h4 {
+    color: #fff;
+    margin: 0 0 0.5rem 15px;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #fff;
+    margin: 0 0 0.5rem 15px;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    height: 20px;
+
+    font-family: Rubik,serif;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.01em;
+    vertical-align: middle;
+    font-variant-numeric-figure: lining-nums;
+    font-variant-numeric-spacing: proportional-nums;
+
+
+}
+/*
+.filterButtons {
+    display: flex;
+    gap: 10px;
+    margin: 20px;
+}
+
+.filterButtons button {
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1px solid #1db954;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filterButtons button.active {
+    background: #1db954;
+}*/
 
 
 /* Espaçamentos responsivos */

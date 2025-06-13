@@ -8,6 +8,7 @@ import Dashboard from './pages/Dashboard';
 import Artista  from "./pages/Artista";
 import Playlist  from "./pages/Playlist";
 import Perfil from "./pages/Perfil";
+import ArtistAlbums from './pages/ArtistAlbums';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(
@@ -24,6 +25,7 @@ root.render(
               <Route path="/artista" element={<Artista />} />
               <Route path="/playlist" element={<Playlist />} />
               <Route path="/perfil" element={<Perfil />} />
+              <Route path="/artist/:artistId/albums" element={<ArtistAlbums />} />
               <Route path="*" element={<Navigate to="/login" replace />} />
 
           </Routes>
